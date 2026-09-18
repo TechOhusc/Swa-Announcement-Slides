@@ -4,7 +4,10 @@
   <!-- Reloads the page every 1 hour (3600 seconds) to fetch slide updates -->
   <meta http-equiv="refresh" content="3600">
   <style>
-    body, html { 
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body { 
       margin: 0; 
       padding: 0; 
       width: 100vw; 
@@ -15,16 +18,16 @@
     iframe { 
       width: 100vw; 
       height: 100vh; 
-      border: 0; 
+      border: 0;
+      display: block;
     }
   </style>
 </head>
 <body>
+  <!-- Changed pubembed to pub to remove bottom bar clipping -->
   <iframe 
-    src="https://docs.google.com/presentation/d/e/2PACX-1vRK_d7JkmKwSmYD7SDZ_f_EyftIvVga5RvKm1aMzMcnn_rH-mzcxeSszPHbviSmQXkNl6V_76pcG3yY/pubembed?start=true&loop=true&delayms=5000" 
-    allowfullscreen="true" 
-    mozallowfullscreen="true" 
-    webkitallowfullscreen="true">
+    src="https://docs.google.com/presentation/d/e/2PACX-1vRK_d7JkmKwSmYD7SDZ_f_EyftIvVga5RvKm1aMzMcnn_rH-mzcxeSszPHbviSmQXkNl6V_76pcG3yY/pub?start=true&loop=true&delayms=5000" 
+    allowfullscreen="true">
   </iframe>
 </body>
 </html>
