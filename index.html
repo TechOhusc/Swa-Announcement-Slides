@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Reloads the page every 1 hour (3600 seconds) to fetch slide updates -->
   <meta http-equiv="refresh" content="3600">
   <style>
-    *, *::before, *::after {
+    * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
-    html, body { 
-      margin: 0; 
-      padding: 0; 
-      width: 100vw; 
-      height: 100vh; 
-      overflow: hidden; 
-      background-color: #000; 
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
-    iframe { 
-      width: 100vw; 
-      height: 100vh; 
-      border: 0;
-      display: block;
+    .slide-container {
+      position: relative;
+      width: 100vw;
+      height: 56.25vw; /* 16:9 aspect ratio relative to viewport width */
+      max-height: 100vh;
+      max-width: 177.78vh; /* 16:9 aspect ratio relative to viewport height */
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <!-- Changed pubembed to pub to remove bottom bar clipping -->
-  <iframe 
-    src="https://docs.google.com/presentation/d/e/2PACX-1vRK_d7JkmKwSmYD7SDZ_f_EyftIvVga5RvKm1aMzMcnn_rH-mzcxeSszPHbviSmQXkNl6V_76pcG3yY/pub?start=true&loop=true&delayms=5000" 
-    allowfullscreen="true">
-  </iframe>
+  <div class="slide-container">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSWuDpXzfHh3slyE49QlKKRJ3ttVdzbv6f3wm88mCe1KcwjfegXO1VdvSQJFwjzMRAm10RaHanaMGai/embed?start=true&loop=true&delayms=3000" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+  </div>
 </body>
 </html>
